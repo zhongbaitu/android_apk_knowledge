@@ -6,7 +6,7 @@ Android App Bundle (AAB) 是 Google Play 商店使用的一种发布格式，它
 
 优点：方便快捷、无需搭建环境、无需使用命令行
 
-地址：[aab - apk 在线转换器](https://aabtoapk.online/)
+地址：[aab - apk 在线转换器](https://aabtoapk.online/zh-CN)
 
 
 ## 方法二、使用命令行转换工具：bundletool
