@@ -36,6 +36,7 @@ wget https://github.com/google/bundletool/releases/download/1.15.6/bundletool-al
 3. 转换步骤
 生成 APK Set 文件:
 ```
+使用自定义签名:
 java -jar bundletool.jar build-apks \
   --bundle=/path/to/app.aab \
   --output=/path/to/output.apks \
@@ -43,21 +44,19 @@ java -jar bundletool.jar build-apks \
   --ks-pass=pass:keystorePassword \
   --ks-key-alias=keyAlias \
   --key-pass=pass:keyPassword
+
+使用系统debug签名:
+java -jar bundletool.jar build-apks \
+  --bundle=/path/to/app.aab \
+  --output=/path/to/output.apks 
 ```
-参数说明：
-- --bundle: AAB 文件路径
-- --output: 输出的 APK Set 文件路径(.apks)
-- --ks: 密钥库文件路径
-- --ks-pass: 密钥库密码
-- --ks-key-alias: 密钥别名
-- --key-pass: 密钥密码
 
 从 APK Set 提取设备相关的 APK:
 ```
-//针对已连接设备
+针对已连接设备:
 java -jar bundletool.jar install-apks --apks=/path/to/output.apks
 
-//提取通用 APK(支持所有设备)，可以用这种方式提取apk
+提取通用 APK(支持所有设备)，可以用这种方式提取apk:
 java -jar bundletool.jar build-apks \
   --bundle=/path/to/app.aab \
   --output=/path/to/output.apks \
@@ -92,5 +91,3 @@ java -jar bundletool.jar build-apks \
 ## 参考资料
 
 - [Android 开发者文档 - bundletool](https://developer.android.com/tools/bundletool)
-- [Google Play 官方文档](https://developer.android.com/guide/app-bundle)
-
